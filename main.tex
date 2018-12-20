@@ -1,0 +1,140 @@
+\documentclass{scrartcl}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%Numbers, expectation
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\V}{\mathbb{V}}
+\renewcommand{\H}{\mathcal{H}}
+\newcommand{\G}{\mathcal{G}}
+
+%%epigraph,domain
+\newcommand{\dom}{\textup{dom}}
+\newcommand{\epi}{\textup{epi}}
+\newcommand{\interior}{\textup{int}}
+\newcommand{\intdom}{\interior \, \dom}
+
+%%other
+%\renewcommand{\complement}{\mathsf{c}}
+%\renewcommand{\implies}{\Rightarrow}
+\newcommand{\sle}{<}
+\newcommand{\sge}{>}
+\newcommand{\sub}{\subseteq}
+% converges to
+\newcommand{\convto}[1]{\overset{#1 \to \infty}{\longrightarrow}}
+% convex hull
+\newcommand{\conv}[1]{\textup{conv $\left(#1 \right)$}}
+% set-valued map
+\newcommand{\svarrow}{\rightrightarrows}
+
+%% mathoperator
+%argmax
+\DeclareMathOperator*{\argmax}{arg\,max}
+%argmin
+\DeclareMathOperator*{\argmin}{arg\,min}
+%signum
+\DeclareMathOperator{\sgn}{sgn}
+%\DeclareMathOperator{\prox}{\proximal}
+%\newcommand[2]{\proximal}{\prox_{#1}\left(#2 \right)}
+\newcommand{\prox}[3][]{\operatorname{prox}^{#1}_{#2}\left(#3 \right)}
+%\newcommand{\interior}{\textup{int}}
+
+%%
+\usepackage{amsthm}
+\theoremstyle{plain}
+\newtheorem{theorem}[subsection]{Theorem}
+\newtheorem{corollary}[subsection]{Corollary}
+\newtheorem{defin}[subsection]{Definition}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{prop}[subsection]{Proposition}
+\newtheorem{problem}[subsection]{Problem}
+\newtheorem{algo}[subsection]{Algorithm}
+\newtheorem{example}[subsection]{Example}
+\newtheorem{assumption}{Assumption}
+\renewcommand*{\theassumption}{\Alph{assumption}}
+
+\theoremstyle{remark}
+%\newtheorem*{rem}{Remark}
+\newtheorem{remark}[subsection]{Remark}
+
+%%big times
+\usepackage{mathabx}
+
+% for tikz pictures
+\usepackage[utf8]{inputenc}
+\usepackage{pgfplots}
+\newlength{\figureheight}
+\newlength{\figurewidth}
+
+
+%qed symbol
+\newcommand*{\QED}{\hfill\ensuremath{\square}}%
+
+%% sort citations by increasing number
+\usepackage[sort,nocompress]{cite}
+
+%% extended reals
+\usepackage{amsfonts}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+
+%% change items in enumerate quickly
+\usepackage{enumerate}
+
+% \left and \right spanning over multiple lines
+\usepackage{breqn}
+
+% d for integral
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+% norm with 3 lines
+\newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert #1
+		\right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
+
+% regular norm, scalar product
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\vertii}{\Vert}{\rVert}
+\DeclarePairedDelimiter{\inner}{\langle}{\rangle}
+
+
+% bold math symbols
+\usepackage{bm}
+\usepackage{bbm}
+
+% zeros
+\DeclareMathOperator*{\zer}{\textup{zer}}
+
+% Filtrations
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Filt}{\mathscr{F}}
+\usepackage{mathrsfs}
+\newcommand{\Borel}{\mathcal{B}}
+
+% identity
+\newcommand{\Id}{\textup{Id}}
+
+% show labels in pdf
+\usepackage{refcheck}
+\usepackage{leftidx}
+
+\renewcommand{\phi}{\varphi}
+\renewcommand{\t}{\theta}
+\newcommand{\T}{\Theta}
+\renewcommand{\O}{\Omega}
+\newcommand{\sa}{\mathcal{A}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\sX}{\mathcal{X}}
+\newcommand{\sol}{\T^*}
+\newcommand{\solset}{\mathcal{S}}
+
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs}
+
+\begin{document}
+
+
+\end{document}
