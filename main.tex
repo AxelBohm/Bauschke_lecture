@@ -7,7 +7,6 @@
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\R}{\mathbb{R}}
-\renewcommand{\P}{\mathbb{P}}
 \newcommand{\V}{\mathbb{V}}
 \renewcommand{\H}{\mathcal{H}}
 \newcommand{\G}{\mathcal{G}}
@@ -119,22 +118,145 @@
 
 % show labels in pdf
 \usepackage{refcheck}
-\usepackage{leftidx}
 
-\renewcommand{\phi}{\varphi}
-\renewcommand{\t}{\theta}
-\newcommand{\T}{\Theta}
-\renewcommand{\O}{\Omega}
-\newcommand{\sa}{\mathcal{A}}
-\newcommand{\X}{\mathcal{X}}
-\newcommand{\sX}{\mathcal{X}}
-\newcommand{\sol}{\T^*}
-\newcommand{\solset}{\mathcal{S}}
 
 \usepackage{mathtools}
 \mathtoolsset{showonlyrefs}
 
+
+\renewcommand{\P}{\textup{P}}
+\newcommand{\clconv}{\overline{\textup{conv}}\,}
+\newcommand{\clran}{\overline{\textup{ran}}\,}
+\newcommand{\Fix}{\textup{Fix}\,}
+\newcommand{\ov}{\textcircled{v}}
+
+
+
 \begin{document}
+\textbf{Problem 1} Consider $D \sub C \sub \H$, where $C$ is closed convex and we assume that $\P_C(0) \in D$.\\
+(i) Show that $D$ has the minimum norm property and that $\P_C(0) = \P_D(0)$. \\
+From the definition of the Projection we deduce 
+\begin{equation}
+  \lVert \P_C(0) \rVert \le \lVert x \rVert, \quad \forall x \in C
+\end{equation}
+thus, as $\clconv(D) \sub C$,
+\begin{equation}
+  \label{eq:clconv}
+  \lVert \P_C(0) \rVert \le \lVert x \rVert, \quad \forall x \in \clconv(D)
+\end{equation}
+and therefore
+\begin{equation}
+  \label{eq:projond}
+  \lVert \P_C(0) \rVert \le \lVert x \rVert, \quad \forall x \in D.
+\end{equation}
+By assumption $\P_C(0) \in D$ and therefore $\P_C(0) \in \clconv(D)$.
+Combining this with~\eqref{eq:clconv} gives that $\P_C(0) = \P_{\clconv(D)}(0)$ and proofs the minimum norm property of $D$.
+Similarly, we deduce from~\eqref{eq:projond} that $\P_C(0) \in D$ is already the projection of $0$ onto $D$, i.e. $\P_C(0) = \P_D(0)$.
+
+(ii)
+From the projection theorem we deduce that
+\begin{equation}
+  \label{eq:lala}
+  \left\langle x_{k} - \P_C(0), 0 - \P_C(0) \right\rangle \le 0
+\end{equation}
+and therefore
+\begin{equation}
+  \left\langle x_{k}, \P_C(0) \right\rangle \ge \lVert \P_C(0) \rVert^2.
+\end{equation}
+Furthermore, by Cauchy-Schwarz also have that
+\begin{equation}
+  \lVert \P_C(0) \rVert \lVert x_{k} \rVert \ge \left\langle x_{k}, \P_C(0) \right\rangle \ge \lVert \P_C(0) \rVert^2.
+\end{equation}
+% Let us now consider an arbitrary weakly convergent subsequence, which must exist as $(x_{k})$ is bounded, and call its limit 
+% Let $\bar{x}$ be any weak clusterpoint of $(x_{n})$, then $\left\langle \bar{x}, \P_{C}(0) \right\rangle = \lVert \P_{C}(0) \rVert^2$ and $\lVert \bar{x} \rVert = \lVert \P_{C}(0) \rVert$. Thus, $\bar{x} = \P_{C}(0)$.
+% Assume now, on the contrary that there exists a subsequence of $(x_{n_k})$ which does not converge to $\P_C(0)$.
+Thus $\left\langle x_{k}, \P_C(0) \right\rangle$ converges to $\lVert \P_C(0) \rVert^{2}$.
+Now consider
+\begin{equation}
+  \begin{aligned}
+    \lVert x_{k} - \P_{C}(0) \rVert &= \left\langle x_{k} - \P_{C}(0), x_{k} - \P_{C}(0) \right\rangle \\
+    &= \left\langle x_{k} - \P_{C}(0), 0 - \P_{C}(0) \right\rangle + \left\langle x_{k} - \P_{C}(0), x_{k} \right\rangle  \\
+    &\le \lVert x_{n} \rVert^2 - \left\langle \P_{C}(0), x_{k} \right\rangle 
+  \end{aligned}
+\end{equation}
+which proves the strong convergence.
+
+
+\textbf{Problem 2} Construct an example where $\clran(\Id - T)$ is not convex.
+
+\textbf{Problem 6} Let $T: \H \to \H$ be linear, and nonexpansive. Show that $\Fix T = \Fix T^*$.
+\begin{equation}
+  x \in \Fix T \Leftrightarrow Tx=x \implies \left\langle Tx, x \right\rangle = \lVert x \rVert^2 = \left\langle T^*x, x \right\rangle.
+\end{equation}
+This shows that 
+\begin{equation}
+  \left\langle T^*\frac{x}{\lVert x \rVert}, \frac{x}{\lVert x \rVert} \right\rangle = 1
+\end{equation}
+which means that the angle between the two vectors is zero and since $\lVert T \frac{x}{\lVert x \rVert} \rVert \le 1$ it must already be one and the two vectors have to be equal. Thus $x$ is also a fixed point of $T^*$.
+
+\textbf{Problem 8} Show that $A^{-\ov}$ is good notation.
+\begin{equation}
+  \label{eq:ov}
+  {(A^{\ov})}^{-1} = {(-\Id)}^{-1} \circ A^{-1} \circ {(-\Id)}^{-1} = (-\Id) \circ A^{-1} \circ (-\Id) = {(A^{-1})}^{\ov}
+\end{equation}
+
+\textbf{Problem 9} Show that ${(A, B)}^{**} := {({(A, B)}^*)}^* = {(A, B)}$.
+Clearly ${(A^{-1})}^{-1} = A$. So the only thing to check is that
+\begin{equation}
+  {\left(B^{-\ov}\right)}^{-\ov} = B.
+\end{equation}
+By~\eqref{eq:ov}
+\begin{equation}
+  \begin{aligned}
+    {\left(B^{-\ov}\right)}^{-\ov} &= {\left({\left({\left(B^{\ov}\right)}^{-1}\right)}^{-1}\right)}^{\ov} = {\left(B^{\ov}\right)}^{\ov}\\
+    &= {(-\Id)} \circ B^{\ov} \circ {(-\Id)} \\
+    &= {(-\Id)} \circ {(-\Id)} \circ B \circ {(-\Id)} \circ {(-\Id)} \\
+    &= B.
+  \end{aligned}
+\end{equation}
+
+
+\textbf{Problem 14 (orthogonal sum)} Let $C, D$ be nonempty closed convex sets.
+i) $C+D$ is convex.
+\begin{equation}
+  C+D = \{c+d : c \in C, d \in D\}
+\end{equation}
+Let $x,y \in C+D$, then for any $\alpha \in (0,1)$
+\begin{equation}
+  \begin{aligned}
+    \alpha x+ (1 -\alpha)y &= \alpha(c_x + d_x) + (1-\alpha)(c_y + c_d)\\
+    &= \alpha c_x + (1-\alpha) c_y + \alpha c_y (1-\alpha) d_y
+  \end{aligned}
+\end{equation}
+which is again an element of $C+D$ due to the convexity of $C$ and $D$.
+ii) If $C \perp D$, then $C+D$ is closed. \\
+Let $(x_{n})_{n \in \N}$ be a convergent sequence in $C+D$ with limit $x$. Due to the orthogonality of $C$ and $D$ we can decompose $x_{n} = c_{n} + d_{n}$ in a unique way, for $c_{n} \in C$ and $d_{n} \in D$. In particular, $c_{n} = \P_{C}x_{n}$ and analogously $d_{n} = \P_{D}x_{n}$. Due to the nonexpansiveness of the projection 
+\begin{equation}
+  \lVert x_{n} - x \rVert \ge \lVert \P_{C}x_{n} - \P_{C}x \rVert
+\end{equation}$c_{n}$ and $d_{n}$ must also converge.
+
+iii) Example where $C+D$ is not closed.\\
+Consider $C=\{(x,y) : e^{-x} \le y\}$ and $D = \{(-x,0) : x \ge 0\}$. Then, $(0, y) \in C+D$ for all $y>0$ as we can decompose it through
+\begin{equation}
+  (0, y) = (-x, 0) + (x, y)
+\end{equation}
+for an arbitrary $x$ such that $e^{-x} \le y$. However, the origin is clearly not contained, making the sum not closed.
+
+
+\textbf{Problem 17 (backward-backward operator)} Give an example where backward-backward is not self-dual.
+Let $B$ be the normal cone to $\R_{+}$ and $A$ the identity on $\R$.
+Then, 
+\begin{equation}
+  J_{B} \circ J_{A} (-1) = J_{B} (-1) = 0
+\end{equation}
+and
+\begin{equation}
+  J_{B^{-\ov}} \circ J_{A^{-1}} (-1) = J_{B^{-\ov}} (-1) = (-\Id) \circ B^{-1} (1) = (-\Id) (1) = -1.
+\end{equation}
+
+\textbf{Problem 17 (backward-backward operator)} Give an example where backward-backward is not self-dual.
+
+
 
 
 \end{document}
