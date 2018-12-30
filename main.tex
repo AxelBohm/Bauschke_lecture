@@ -130,6 +130,7 @@
 \newcommand{\clran}{\overline{\textup{ran}}\,}
 \newcommand{\Fix}{\textup{Fix}\,}
 \newcommand{\ov}{\textcircled{v}}
+\newcommand{\gr}{\textup{gra}\,}
 
 
 
@@ -281,6 +282,45 @@ Furthermore we have that
 Also, all the solution to $0 \in Ax + Bx$ which we call $Z:= {(A + B)}^{-1}(0)$ are given by $\bigcup_{k \in X} Z_{k}$. To see this, let $z \in Z$ be a solution. Then $K_{z}$ is not empty, i.e. it contains an element $k$. 
 Thus, $z \in Z_{k}$ and therefore $z \in \bigcup_{k \in X} Z_{k}$.\\
 Conversely, let $z$ be an element of $\bigcup_{k \in X} Z_{k}$. Then, there exists a $k$, such that $z \in Z_{k}$. Thus, $k \in K_{z}$ which means that $K_{z}$ is in particular not empty and $z$ is therefore a solution.
+
+\textbf{Problem 11 (Passty's convexity result)} Show that
+\begin{equation}
+  (\gr A) \cap ((x,0) - \gr (-B)) = \{(y,w) \in \gr A \,| \,(x-y,w) \in \gr B\}.
+\end{equation}
+This follows directly from the definition of intersection
+\begin{equation}
+  \begin{aligned}
+    (\gr A) \cap ((x,0) - \gr (-B)) &= \{(y,w) \,| \,(y,w) \in \gr A \wedge (x,0) - (y,-w) \in \gr B\} \\
+    &= \{(y,w) \,| \,(y,w) \in \gr A \wedge (x-y,w) \in \gr B\} \\
+    &= \{(y,w) \in \gr A \,| \,(x-y,w) \in \gr B\}.
+  \end{aligned}
+\end{equation}
+
+\textbf{Problem 13 (paramonotone operators)} Show that $A+\lambda B$ is paramonotone for paramonotone operators $A,B$.
+Let $(x,x^*) \in  \gr (A+\lambda B)$ and $(y,y^*) \in \gr (A + \lambda B)$ where $x^* = x_A^* + \lambda x_B^*$ for $x_A^* \in Ax$ and $x_B^* \in Bx$ - analogously for $y^*$.
+Assume now that
+\begin{equation}
+  \left\langle x-y, x_A^* + \lambda x_B^* - y_A^* - \lambda y_B^* \right\rangle = 0.
+\end{equation}
+Then, by linearity of the inner product we get
+\begin{equation}
+  \left\langle x-y, x_A^*  - y_A^*  \right\rangle + \lambda \left\langle x-y, x_B^* - y_B^* \right\rangle = 0.
+\end{equation}
+Since $A$ and $B$ are monotone both of these summands are nonnegative so they both must be zero.
+Due to the paramonotonicity we get that
+\begin{equation}
+  \{(x,y_A^*), (y, x_A^*) \} \sub \gr A
+\end{equation}
+and
+\begin{equation}
+  \{(x,y_B^*), (y, x_B^*) \} \sub \lambda \, \gr B.
+\end{equation}
+Thus,
+\begin{equation}
+  \{(x, y_A^* + y_B^*), (y, x_A^* + x_B^*)\} \sub \gr (A + \lambda B)
+\end{equation}
+which proofs the paramonotonicity of $A+\lambda B$.
+
 
 \textbf{Problem 14 (orthogonal sum)} Let $C, D$ be nonempty closed convex sets.
 i) $C+D$ is convex.
