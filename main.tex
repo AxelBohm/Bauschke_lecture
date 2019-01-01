@@ -348,6 +348,30 @@ Consider $C=\{(x,y) : e^{-x} \le y\}$ and $D = \{(-x,0) : x \ge 0\}$. Then, $(0,
 \end{equation}
 for an arbitrary $x$ such that $e^{-x} \le y$. However, the origin is clearly not contained, making the sum not closed.
 
+\textbf{Problem 15 (projector onto primal solutions)} Let $A,B$ be paramonotone and $Z-Z \perp K$. Show that $J_A \circ \P_{Z+K} = \P_Z$.\\
+Let $z_0 \in Z$. Then $Z-z_0 \perp K$. Thus, $Z+K -z_0$ is closed and convex.
+Therefore,
+\begin{equation}
+  \begin{aligned}
+    \P_{Z+K}(x) &= \P_{z_0+ Z+K}(x) = z_0 + \P_{Z+K-z_0}(x-z_0) \\
+    &= z_0 + \P_{Z-z_0}(x-z_0) + \P_{K}(x-z_0) = \P_Z(x) + \P_K(x-z_0).
+  \end{aligned}
+\end{equation}
+Set now $z := \P_Z(x)$.
+Then,
+\begin{equation}
+  \P_{Z+K}(x) - z = \P_{Z+K}(x) - \P_Z(x) = P_K(x) \in K = K_z \sub Az.
+\end{equation}
+Hence,
+\begin{equation}
+  z = J_A \circ \P_{Z+K}(x)
+\end{equation}
+i.e.
+\begin{equation}
+  \P_Z(x) = J_A \circ \P_{Z+K}(x).
+\end{equation}
+
+
 \textbf{Problem 16 (reflected resolvent calculus)} Check the following calculus. \\
 i) $R_{C^{-1}} = - R_{C}$ \\
 Let $y = R_{C^{-1}}(x)$, then
@@ -398,7 +422,7 @@ and
 \end{equation}
 
 
-
+\textbf{Problem 18} Let $A,B$ be paramonotone and $J_A(z+k) = \P_Z(z=k)$ for a $k \in K$. Show that $k \in (Z -Z)^{\perp}$.
 
 
 \end{document}
