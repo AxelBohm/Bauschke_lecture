@@ -296,6 +296,33 @@ This follows directly from the definition of intersection
   \end{aligned}
 \end{equation}
 
+\textbf{Problem 12 (parallel sum)} Show that
+\begin{equation}
+  (A \square B)z = \bigcup_{y \in X} (Ay) \cap (B(x-y)).
+\end{equation}
+We start of by proofing that
+\begin{equation}
+  \bigcup_{y \in X} (Ay) \cap (B(x-y)) \sub (A \square B)z.
+\end{equation}
+Let $z \in \bigcup_{y \in X} (Ay) \cap (B(x-y))$.
+Then there exists a $y'$ such that
+\begin{equation}
+  z \in (Ay') \cap (B(x-y')).
+\end{equation}
+Thus 
+\begin{equation}
+  z \in A y' \quad \wedge \quad z \in B(x-y').
+\end{equation}
+Therefore, by inverting the operators
+\begin{equation}
+  y' \in A^{-1} z \quad \wedge \quad x - y' \in B^{-1}z.
+\end{equation}
+Summing up the above inclusions gives
+\begin{equation}
+  x \in (A^{-1} + B^{-1})z.
+\end{equation}
+Inverting again gives the desired inclusion. The opposite inclusion follows analogously.
+
 \textbf{Problem 13 (paramonotone operators)} Show that $A+\lambda B$ is paramonotone for paramonotone operators $A,B$.
 Let $(x,x^*) \in  \gr (A+\lambda B)$ and $(y,y^*) \in \gr (A + \lambda B)$ where $x^* = x_A^* + \lambda x_B^*$ for $x_A^* \in Ax$ and $x_B^* \in Bx$ - analogously for $y^*$.
 Assume now that
