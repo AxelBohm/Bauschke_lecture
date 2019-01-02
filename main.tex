@@ -422,7 +422,49 @@ and
 \end{equation}
 
 
-\textbf{Problem 18} Let $A,B$ be paramonotone and $J_A(z+k) = \P_Z(z=k)$ for a $k \in K$. Show that $k \in (Z -Z)^{\perp}$.
+\textbf{Problem 18} Let $A,B$ be paramonotone and $k \in K$. Assume $J_A(z+k) = \P_Z(z=k)$ for all $z \in Z$.
+Show that $k \in (Z -Z)^{\perp}$.\\
+As a first small interlude, we will proof that 
+\begin{equation}
+  J_A(z+k) = z.
+\end{equation}
+We probably proofed this at some point but I couldn't find it (or it can very easily deduced from our work about Douglas-Rachford).
+Either way, since $A$ and $B$ are paramonotone $K=K_z$ for all $z \in Z$.
+This means that every $k \in K$ fullfills 
+\begin{equation}
+  k \in Az \cap (-Bz)
+\end{equation}
+for all $z \in Z$, and in particular 
+\begin{equation}
+  k \in Az.
+\end{equation}
+Thus $k+z \in (\Id + A)(z)$ and 
+\begin{equation}
+  J_A(z+k) = z.
+\end{equation}\\
+
+
+Now we can use the assumption of this problem that $J_A(z+k) = \P_Z(z+k)$ for all $z \in Z$ to deduce that
+\begin{equation}
+  z = P_Z(z+k) \quad, \forall z \in Z.
+\end{equation}
+From this we deduce via the projection theorem that
+\begin{equation}
+  \left\langle z-z', z+k - z \right\rangle\le 0, \quad \forall z,z' \in Z.
+\end{equation}
+Thus
+\begin{equation}
+  \left\langle z-z', k \right\rangle\le 0, \quad \forall z,z' \in Z.
+\end{equation}
+And by reversing the roles of $z$ and $z'$ also
+\begin{equation}
+  \left\langle z'-z, k \right\rangle\le 0, \quad \forall z,z' \in Z.
+\end{equation}
+Therefore
+\begin{equation}
+  k \perp (Z-Z).
+\end{equation}
+
 
 
 \end{document}
