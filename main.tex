@@ -184,9 +184,14 @@ Now consider
 which proves the strong convergence.
 
 
-\textbf{Problem 2} Construct an example where $\clran(\Id - T)$ is not convex.
+\textbf{Problem 2} Construct an example where $\clran(\Id - T)$ is not convex, for a nonexpansive operator $T:C \to C$. 
 
 
+\textbf{Problem 3} Construct an example where $\clran(\Id - T)$ does not posses the minimum norm propert for a nonexpansive operator $T:C \to C$. \\
+Since the projection onto a closed convex set is a firmly nonexpansive map also $\Id - T$ is a firmly nonexpansive map and therefore also a projection.
+It is therefore enough to consider $\Id - T$ as a projection onto a closed convex set.
+Let $\Id - T$ be the projection onto the unit ball, in $\R^2$ with domain $\{(x, 1) \in \R^2 : -1 \le x\le 1\}$.
+The range of $\Id - T$ is then clearly a subset of the upper half of the unit circle and does not have the minimum norm property.
 
 
 \textbf{Problem 4} Pazy's Trichotomy.\\
@@ -492,6 +497,43 @@ Therefore
   k \perp (Z-Z).
 \end{equation}
 
+\textbf{Problem 19} Let $U$ be a closed linear subspace of $X$ and $b \in U^{\perp}\\ \{0\}$, $A:= N_U$ and $B=\Id + N_{-b+U}$. \\
+From the paper we already know that
+\begin{equation}
+  J_B = -b +\frac{1}{2}\P_U
+\end{equation}
+and the Douglas-Rachford operator
+\begin{equation}
+  T = T_{(A,B)} = \P_{U^{\perp}} + J_B R_U.
+\end{equation}
+By induction we check that
+\begin{equation}
+  T^n = P_{U^{\perp}} + \frac{1}{2^n} \P_U - n b.
+\end{equation}
+In order to see this we consider
+\begin{equation}
+  T^{n+1} = T \circ T^{n} = (\P_{U^{\perp}} + (-b +\frac{1}{2}\P_U) R_U)\circ\left(P_{U^{\perp}} + {\left(\frac{1}{2}\right)}^{n} \P_U - n b\right).
+\end{equation}
+Expanding the above expressions gives
+\begin{equation}
+  \begin{aligned}
+    &\left(\P_{U^{\perp}} + (-b +\frac{1}{2}\P_U) R_U\right)\circ\left(P_{U^{\perp}} + \frac{1}{2^n} \P_U - n b\right) = \\
+    &= \P_{U^{\perp}} + 0 - nb + \left((-b +\frac{1}{2}\P_U) R_U\right) \circ \left(P_{U^{\perp}} + \frac{1}{2^n} \P_U - n b\right)\\
+    &= \P_{U^{\perp}} - nb + - b + \frac{1}{2}\P_U R_U P_{U^{\perp}} + \frac{1}{2}\P_U R_U \frac{1}{2^n} \P_U  - \frac{1}{2}\P_U R_U(n b) \\
+    &= \P_{U^{\perp}} - (n+1)b + 0 + \frac{1}{2}\P_U \frac{1}{2^n} \P_U - \frac{n}{2}\P_U ( b) \\
+    &= \P_{U^{\perp}} - (n+1)b  + \frac{1}{2^{n+1}} P_U,
+  \end{aligned}
+\end{equation}
+where used the fact that $R_U P_U = P_U R_U = P_U$ multiple times.
+This finishes the proof.\\
 
+
+\textbf{Coding Problem} Suppose $U = \R^2_+$ and $V$ a line in $\R^2$, not necessarely through the origin.
+We set $A= N_U$ and $B=N_V$.
+Clearly $J_A$ is then given by the the projection onto the nonnegative orthant which simply set negative coordinates of a point to zero.
+Similarly $J_B$ is a projection onto the line which can be realized by subtracting a reference point, projection onto the corresponding $1$-dimensional subspace and then readding the reference point, where the the projection of a point $x$ onto the subspace genereated by a vector $v$ is given by the formula
+\begin{equation}
+  \frac{\left\langle x,v \right\rangle }{\lVert v \rVert^2} v.
+\end{equation}
 
 \end{document}
