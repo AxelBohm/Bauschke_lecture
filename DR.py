@@ -29,6 +29,17 @@ def projection_orthant(x):
     return y
 
 
+def alt_projec(x_0, line, iterations):
+    x = x_0.copy()
+    iter_save = []
+
+    for _ in range(iterations):
+        x = projection_orthant(line.projection(x))
+        iter_save.append(x)
+
+    return (x, iter_save)
+
+
 def dr_operator(x, line):
     return 0.5*(x + line.resolvent(resolvent_orthant(x)))
 
@@ -54,7 +65,8 @@ x_0 = np.array([4, -0.1])
 
 line_trough_int = Line(point, vector)
 
-(x, iter_save, shadow_save) = dr_algo(x_0, line_trough_int, 100)
+(x, iter_save, shadow_save) = dr_algo(x_0, line_trough_int, 15)
+(x_alt_proj, iter_save_alt_proj) = alt_projec(x_0, line_trough_int, 15)
 
 # prepare figure
 fig_trough_int = plt.figure()
@@ -62,6 +74,8 @@ x_plot_iter = [xi[0] for xi in iter_save]
 y_plot_iter = [xi[1] for xi in iter_save]
 x_plot_shadow = [xi[0] for xi in shadow_save]
 y_plot_shadow = [xi[1] for xi in shadow_save]
+x_plot_alt_proj = [xi[0] for xi in iter_save_alt_proj]
+y_plot_alt_proj = [xi[1] for xi in iter_save_alt_proj]
 xlim = [min([*x_plot_iter, *x_plot_shadow, 0, *abs(x_0)])-1,
         max(*x_plot_iter, *x_plot_shadow, *abs(x_0), 1)+1]
 ylim = [min(*y_plot_iter, *y_plot_shadow, 0, *abs(x_0))-1,
