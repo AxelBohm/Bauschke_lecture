@@ -211,7 +211,14 @@ ii) Let $T: \R \to \R$  be defined by
   \end{cases}
 \end{equation}
 Clearly, $\ran(\Id - T) = [-1, 0)$.
-This means that case ii) of Pazy's Trichotomy is occurring.
+This means that case ii) of Pazy's Trichotomy is occurring. 
+Now we want to check that $\limsup_n T^n x = +\infty$ for some/all $x$. \\
+Clearly, for any $x$ we have that $T^n x$ is greater than $1$ after finitely many steps, so we only consider this case.
+For $x>1$ we can see that $T$ is monotone. Let $x>y > 1$, then
+\begin{equation}
+  Tx \ge Ty \Leftrightarrow x + \frac{1}{x} \ge y + \frac{1}{y} \Leftrightarrow x-y \ge \frac{1}{y} - \frac{1}{x} = \frac{x-y}{xy}
+\end{equation}
+where the right hand side $x-y \ge \frac{x-y}{xy}$ is true as $x,y > 1$.
 
 
 
