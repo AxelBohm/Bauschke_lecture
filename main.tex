@@ -536,4 +536,15 @@ Similarly $J_B$ is a projection onto the line which can be realized by subtracti
   \frac{\left\langle x,v \right\rangle }{\lVert v \rVert^2} v.
 \end{equation}
 
+\begin{figure}%
+  \includegraphics[scale=0.7]{./intersec_int.png}
+  \centering
+  \caption{The line has a nonempty intersection with the interior of the nonnegative orthant. Douglas-Rachford converges in finitely many steps to a solution and does so in much less iterations than the alternating projection method.}
+\end{figure}
+
+\begin{figure}%
+  \includegraphics[scale=0.7]{./no_solution.png}
+  \centering
+  \caption{The intersection between line and nonnegative orthant is empty. This means that the problem is infeasible. The iterates thus converge to $+\infty$. The shadow sequence however converges to a normal solution. So do the iterates of the alternating projection method after slightly more iterations.} 
+\end{figure}
 \end{document}

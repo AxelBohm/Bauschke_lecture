@@ -90,22 +90,25 @@ y_line = x_line*slope + shift
 plt.plot(x_line, y_line)
 
 # plot iterates
-plt.scatter(x_plot_iter, y_plot_iter, label='iterates')
+plt.scatter(x_plot_iter, y_plot_iter, alpha=0.5, label='iterates')
 
 # plot shadow sequence
-plt.scatter(x_plot_shadow, y_plot_shadow, label='shadow sequence')
+plt.scatter(x_plot_shadow, y_plot_shadow, alpha=0.5, marker='s', label='shadow sequence')
+
+# plot alternating projection
+plt.scatter(x_plot_alt_proj, y_plot_alt_proj, marker='v', alpha=0.5, label='alternating projection')
 
 # plot nonnegative orthant
 ylim[1] = max(*y_plot_iter, *y_plot_shadow, *y_line)+1
 ax = plt.gca()
-ax.fill_between([0, xlim[1]], 0, ylim[1], alpha=0.5)
+ax.fill_between([0, xlim[1]], 0, ylim[1], color='gray', alpha=0.5)
 
 # plot starting point
-plt.scatter(*x_0, color='red', label='starting point')
+plt.scatter(*x_0, color='red', marker='H', label='starting point')
 
 plt.grid()
 plt.legend(loc='lower left')
-plt.savefig('intersec_int.eps')
+plt.savefig('intersec_int.png')
 
 # --------------------------------------------
 # Next plot
@@ -115,16 +118,19 @@ vector = np.array([0.1, -0.1])
 x_0 = np.array([4, -0.1])
 # --------
 
-line_trough_int = Line(point, vector)
+line_no_int = Line(point, vector)
 
-(x, iter_save, shadow_save) = dr_algo(x_0, line_trough_int, 20)
+(x, iter_save, shadow_save) = dr_algo(x_0, line_no_int, 10)
+(x_alt_proj, iter_save_alt_proj) = alt_projec(x_0, line_no_int, 10)
 
 # prepare figure
-fig_trough_int = plt.figure()
+fig_no_int = plt.figure()
 x_plot_iter = [xi[0] for xi in iter_save]
 y_plot_iter = [xi[1] for xi in iter_save]
 x_plot_shadow = [xi[0] for xi in shadow_save]
 y_plot_shadow = [xi[1] for xi in shadow_save]
+x_plot_alt_proj = [xi[0] for xi in iter_save_alt_proj]
+y_plot_alt_proj = [xi[1] for xi in iter_save_alt_proj]
 xlim = [min([*x_plot_iter, *x_plot_shadow, 0, *abs(x_0)])-1,
         max(*x_plot_iter, *x_plot_shadow, *abs(x_0), 1)+1]
 ylim = [min(*y_plot_iter, *y_plot_shadow, 0, *abs(x_0))-1,
@@ -139,19 +145,23 @@ y_line = x_line*slope + shift
 plt.plot(x_line, y_line)
 
 # plot iterates
-plt.scatter(x_plot_iter, y_plot_iter, label='iterates')
+plt.scatter(x_plot_iter, y_plot_iter, alpha=0.5, label='iterates')
 
 # plot shadow sequence
-plt.scatter(x_plot_shadow, y_plot_shadow, label='shadow sequence')
+plt.scatter(x_plot_shadow, y_plot_shadow, alpha=0.5, marker='s',
+        label='shadow sequence')
+
+# plot alternating projection
+plt.scatter(x_plot_alt_proj, y_plot_alt_proj, marker='v', alpha=0.5, label='alternating projection')
 
 # plot nonnegative orthant
 ylim[1] = max(*y_plot_iter, *y_plot_shadow, *y_line)+1
 ax = plt.gca()
-ax.fill_between([0, xlim[1]], 0, ylim[1], alpha=0.5)
+ax.fill_between([0, xlim[1]], 0, ylim[1], color='gray', alpha=0.5)
 
 # plot starting point
-plt.scatter(*x_0, color='red', label='starting point')
+plt.scatter(*x_0, color='red', marker='H', label='starting point')
 
 plt.grid()
-plt.legend(loc='lower left')
-plt.savefig('no_solution.eps')
+plt.legend(loc='center left')
+plt.savefig('no_solution.png')
