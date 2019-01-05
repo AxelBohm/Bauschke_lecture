@@ -240,7 +240,7 @@ Assume it is true for $n-1$. Then,
   \end{aligned}
 \end{equation}
 Next, for $x \in \ell^2$ we have that $\lVert T^{k}x - T^{k+1}x \rVert = \lVert Tx - x \rVert$ since $T$ is an isometry.
-Thus, $\lim_{k} \lVert T^{k}x - T^{k+1}x \rVert = \lVert Tx - x \rVert$, which is strictly greater zero as $T$ has no fixed points.
+Thus, $\lim_{k} \lVert T^{k}x - T^{k+1}x \rVert = \lVert Tx - x \rVert$, which is strictly greater zero as $T$ has no fixed points.\\
 
 
 \textbf{Problem 6} Let $T: \H \to \H$ be linear, and nonexpansive. Show that $\Fix T = \Fix T^*$.
@@ -251,7 +251,7 @@ This shows that
 \begin{equation}
   \left\langle T^*\frac{x}{\lVert x \rVert}, \frac{x}{\lVert x \rVert} \right\rangle = 1
 \end{equation}
-which means that the angle between the two vectors is zero and since $\lVert T \frac{x}{\lVert x \rVert} \rVert \le 1$ it must already be one and the two vectors have to be equal. Thus $x$ is also a fixed point of $T^*$.
+which means that the angle between the two vectors is zero and since $\lVert T \frac{x}{\lVert x \rVert} \rVert \le 1$ it must already be one and the two vectors have to be equal. Thus $x$ is also a fixed point of $T^*$.\\
 
 \textbf{Problem 7} Let ${(\alpha_{k})}_{k \in \N}$ be a sequence of real numbers converging to $\lambda \in \R$. We show that
 \begin{equation}
@@ -261,13 +261,13 @@ Let $\epsilon>0$ be arbitrary and choose $K$ so large that $\lvert \alpha_{i} - 
 \begin{equation}
   \left\lvert \frac{1}{k} \sum_{i=1}^{k} \alpha_{k} - \lambda \right\rvert = \frac{1}{k} \left\lvert \left(\sum_{i=1}^{K} \alpha_{i} - \lambda\right) + \left( \sum_{i=K}^{k} \alpha_{i} - \lambda \right) \right\rvert \le \frac{const.}{k} + \epsilon.
 \end{equation}
-The only thing left to do is to choose $k$ large enough such that $\frac{const.}{k} \le \epsilon$.
+The only thing left to do is to choose $k$ large enough such that $\frac{const.}{k} \le \epsilon$.\\
 
 \textbf{Problem 8} Show that $A^{-\ov}$ is good notation.
 \begin{equation}
   \label{eq:ov}
   {(A^{\ov})}^{-1} = {(-\Id)}^{-1} \circ A^{-1} \circ {(-\Id)}^{-1} = (-\Id) \circ A^{-1} \circ (-\Id) = {(A^{-1})}^{\ov}
-\end{equation}
+\end{equation}\\
 
 \textbf{Problem 9} Show that ${(A, B)}^{**} := {({(A, B)}^*)}^* = {(A, B)}$.
 Clearly ${(A^{-1})}^{-1} = A$. So the only thing to check is that
@@ -282,7 +282,7 @@ By~\eqref{eq:ov}
     &= {(-\Id)} \circ {(-\Id)} \circ B \circ {(-\Id)} \circ {(-\Id)} \\
     &= B.
   \end{aligned}
-\end{equation}
+\end{equation}\\
 
 \textbf{Problem 10 (Attouch-Thera duality)} For maximally monotone $A,B$ we define $K_{z} := (Az) \cap (-Bz)$ and $Z_{k} := A^{-1}k \cap B^{-1}(-k)$. Clearly, $Z_{k}$ is a closed, convex set for any $k$ as the image of of maximally monotone operator is always closed and convex and so is their intersection.
 Furthermore we have that
@@ -294,7 +294,7 @@ Furthermore we have that
     \Leftrightarrow& z \in (A^{-1}k) \cap (B^{-1}(-k)) \\
     \Leftrightarrow& z \in Z_{k}.
   \end{aligned}
-\end{equation}
+\end{equation}\\
 Also, all the solution to $0 \in Ax + Bx$ which we call $Z:= {(A + B)}^{-1}(0)$ are given by $\bigcup_{k \in X} Z_{k}$. To see this, let $z \in Z$ be a solution. Then $K_{z}$ is not empty, i.e. it contains an element $k$. 
 Thus, $z \in Z_{k}$ and therefore $z \in \bigcup_{k \in X} Z_{k}$.\\
 Conversely, let $z$ be an element of $\bigcup_{k \in X} Z_{k}$. Then, there exists a $k$, such that $z \in Z_{k}$. Thus, $k \in K_{z}$ which means that $K_{z}$ is in particular not empty and $z$ is therefore a solution.
@@ -310,7 +310,7 @@ This follows directly from the definition of intersection
     &= \{(y,w) \,| \,(y,w) \in \gr A \wedge (x-y,w) \in \gr B\} \\
     &= \{(y,w) \in \gr A \,| \,(x-y,w) \in \gr B\}.
   \end{aligned}
-\end{equation}
+\end{equation}\\
 
 \textbf{Problem 12 (parallel sum)} Show that
 \begin{equation}
@@ -337,7 +337,7 @@ Summing up the above inclusions gives
 \begin{equation}
   x \in (A^{-1} + B^{-1})z.
 \end{equation}
-Inverting again gives the desired inclusion. The opposite inclusion follows analogously.
+Inverting again gives the desired inclusion. The opposite inclusion follows analogously.\\
 
 \textbf{Problem 13 (paramonotone operators)} Show that $A+\lambda B$ is paramonotone for paramonotone operators $A,B$.
 Let $(x,x^*) \in  \gr (A+\lambda B)$ and $(y,y^*) \in \gr (A + \lambda B)$ where $x^* = x_A^* + \lambda x_B^*$ for $x_A^* \in Ax$ and $x_B^* \in Bx$ - analogously for $y^*$.
@@ -362,7 +362,7 @@ Thus,
 \begin{equation}
   \{(x, y_A^* + y_B^*), (y, x_A^* + x_B^*)\} \sub \gr (A + \lambda B)
 \end{equation}
-which proofs the paramonotonicity of $A+\lambda B$.
+which proofs the paramonotonicity of $A+\lambda B$.\\
 
 
 \textbf{Problem 14 (orthogonal sum)} Let $C, D$ be nonempty closed convex sets.
@@ -389,7 +389,7 @@ Consider $C=\{(x,y) : e^{-x} \le y\}$ and $D = \{(-x,0) : x \ge 0\}$. Then, $(0,
 \begin{equation}
   (0, y) = (-x, 0) + (x, y)
 \end{equation}
-for an arbitrary $x$ such that $e^{-x} \le y$. However, the origin is clearly not contained, making the sum not closed.
+for an arbitrary $x$ such that $e^{-x} \le y$. However, the origin is clearly not contained, making the sum not closed.\\
 
 \textbf{Problem 15 (projector onto primal solutions)} Let $A,B$ be paramonotone and $Z-Z \perp K$. Show that $J_A \circ \P_{Z+K} = \P_Z$.\\
 Let $z_0 \in Z$. Then $Z-z_0 \perp K$. Thus, $Z+K -z_0$ is closed and convex.
