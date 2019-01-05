@@ -183,15 +183,19 @@ Now consider
 \end{equation}
 which proves the strong convergence.
 
+\textbf{Remark (see Problem 2 and 3)} 
+Note that the projection onto a closed convex set is a firmly nonexpansive map and identity minus firmly nonexpansive map is again firmly nonexpansive.
+Thus, if we look for a projection $P$ in place of $\Id - T$ we can ensure that $T = \Id - P = \Id - (\Id - T)$ is in fact nonexpansive.
 
-\textbf{Problem 2} Construct an example where $\clran(\Id - T)$ is not convex, for a nonexpansive operator $T:C \to C$. 
+\textbf{Problem 2} Construct an example where $\clran(\Id - T)$ is not convex, for a nonexpansive operator $T:C \to C$.\\
+Consider $C= \{(x,y) \in \R^2 : y \ge 0 \}$ the uppe half space and let $\P := \Id - T$ be the projection onto the unit ball with center $(0,-1)$.
+First it is easy to see that that the image of $C$ under the projection is nonconvex as is given by the upper half of surface of the ball (not including the points $(1,-1)$ and $(-1,-1)$).
+Now we need to check that $\ran(T) = \ran (\Id - \P)$ is contained in the upper half space (since we require that $T$ maps back to its domain).
+This is however clear as the domain is above the $x$-axis and all images of $\P$ are below it. Thus, all vecors given by $x - \P x$ point up (and are therefore contained in $C$). \\
 
-
-\textbf{Problem 3} Construct an example where $\clran(\Id - T)$ does not posses the minimum norm propert for a nonexpansive operator $T:C \to C$. \\
-Since the projection onto a closed convex set is a firmly nonexpansive map also $\Id - T$ is a firmly nonexpansive map and therefore also a projection.
-It is therefore enough to consider $\Id - T$ as a projection onto a closed convex set.
+\textbf{Problem 3} Construct an example where $\clran(\Id - T)$ does not posses the minimum norm propert for a nonexpansive operator $T:C \to X$. \\
 Let $\Id - T$ be the projection onto the unit ball, in $\R^2$ with domain $\{(x, 1) \in \R^2 : -1 \le x\le 1\}$.
-The range of $\Id - T$ is then clearly a subset of the upper half of the unit circle and does not have the minimum norm property.
+The range of $\Id - T$ is then clearly a subset of the upper half of the unit circle and does not have the minimum norm property. \\
 
 
 \textbf{Problem 4} Pazy's Trichotomy.\\
