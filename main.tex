@@ -219,7 +219,50 @@ For $x>1$ we can see that $T$ is monotone. Let $x>y > 1$, then
   Tx \ge Ty \Leftrightarrow x + \frac{1}{x} \ge y + \frac{1}{y} \Leftrightarrow x-y \ge \frac{1}{y} - \frac{1}{x} = \frac{x-y}{xy}
 \end{equation}
 where the right hand side $x-y \ge \frac{x-y}{xy}$ is true as $x,y > 1$.
+We will proof the fact that $T^n x$ is unbounded by contradiction.
+Assume therefore that $T^n x$ is bounded.
+As the $T$ is monotone $T^n x$ must converge to a limit wich we call $\theta$.
+Since $T^n x$ converges to $\theta$ there exists an $n_0 \in \N$ such that $T^{n_0}x \ge \theta - \frac{1}{\theta}$.
+By the monotonicity we have that
+\begin{equation}
+  T^{n_0+1}x \ge T\left(\theta - \frac{1}{\theta}\right) = \theta - \frac{1}{\theta} + \frac{1}{\theta - \frac{1}{\theta}} > \theta - \frac{1}{\theta} + \frac{1}{\theta} = \theta,
+\end{equation}
+which contradicts the convergence of $T^n x$.\\
+Next, we check that $\lim_{n} \frac{1}{n}T^{n}x = 0$.
+Note that
+\begin{equation}
+  T^2 x  = Tx + \frac{1}{Tx} = x + \frac{1}{x} + \frac{1}{x+\frac{1}{x}} \le x + \frac{2}{x}.
+\end{equation}
+By the same token, we have that
+\begin{equation}
+  T^{n}x \le x + \frac{n}{x}.
+\end{equation}
+Thus
+\begin{equation}
+  \limsup_n \frac{T^{n}x}{n} \le \limsup_n \left( \frac{x}{n} + \frac{1}{x} \right) \le \frac{1}{x}.
+\end{equation}
+We will use this bound now to deduce convergence by considering for arbitrary $k \in \N$
+\begin{equation}
+  \limsup_n \frac{T^{n}x}{n} = \limsup_n \frac{T^{n+k}x}{n+k} = \limsup_n \frac{T^{n}(T^{k}x)}{n+k} \le \limsup_n \frac{T^{n}(T^{k}x)}{n} \le \frac{1}{T^{k}x}.
+\end{equation}
+However, we he have seen earlier that $\lim_k T^{k} x = +\infty$.
+This shows that $\lim_{n} \frac{1}{n}T^{n}x = 0$.\\
 
+(iii) $Tx := x - z$, for some fixed $z \neq 0$.\\
+Clearly, $\ran(\Id - T)= \{z\}$.
+Therefore, $0 \notin \clran(\Id - T) = \{z\}$.
+Furthermore
+\begin{equation}
+  T^{n}x = x -nz.
+\end{equation}
+Therefore 
+\begin{equation}
+  \lim_n T^{n}x = -\sgn(z)\,\infty
+\end{equation}
+and
+\begin{equation}
+  \lim_n \frac{1}{n} \lVert T^{n}x \rVert = \lVert z \rVert.
+\end{equation}\\
 
 
 \textbf{Problem 5} The Edelstein operator.
